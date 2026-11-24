@@ -133,6 +133,26 @@ while i < len(d):
             numbers.pop()
             numbers.append(n)
         i+=1
+    elif d[i] == "©":
+        if CM:
+            s = str(CM[-1])
+            if s:
+                CM.append(s[-1])
+        i += 1
+    
+    elif d[i] == "®":
+        if CM:
+            s = str(CM[-1])
+            if s:
+                CM.append(s[0])
+        i += 1
+    elif d[i] == "^":
+        end = d.find("^", i + 1)
+    
+        if end == -1:
+            i = len(d)
+        else:
+            i = end + 1
     else:
     	print(f"Huh? : char {i} is not a valid command")
     	i+=1
