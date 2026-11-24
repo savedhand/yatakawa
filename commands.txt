@@ -1,5 +1,5 @@
 Command list :
-A - tells the compiler to read the next number as X characters, syntax : A235, A2 says it to read 2 characters one-time, and 35 pushes 35 onto the compiler memory
+A - tells the compiler to read the next number as X characters, syntax : A235, A2 says it to read 2 characters one-time, and 35 pushes 35 onto the compiler memory, it was decided for it to support base-36 after some updates
 0 to 9 - numeric stuff
 , - prints
 Strings - "Hello, this is multi linguistical, 你好这是多语言的"
@@ -23,4 +23,7 @@ Input - ?
 > - false boolean
 C[N] - compiler memory indexing
 N - negative the number last in the cm
+^cimments^ - comments
+© - pop
+® - squish
 One-character at a time, "Hello, World!",2,5,25,A225,ô,q,w,e,¶
