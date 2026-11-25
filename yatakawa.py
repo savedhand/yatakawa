@@ -1,4 +1,6 @@
 import numpy
+import math
+import sys
 d=input("Code: ")
 numbers=[]
 i = 0
@@ -99,7 +101,7 @@ while i < len(d):
         if i+1<len(d):
             if d[i+1]!="[":
                 print(f"Huh? : ok I'm getting tired of typing these errors. {i} {d[i]} check it yourself, unopened [")
-            elif d[i+1]=="]":
+            elif d[i+2]=="]":
                 print("Huh? : ununderstandable ] spawned in a [ command")
             else:
                 parsen=d[i:]
@@ -153,6 +155,52 @@ while i < len(d):
             i = len(d)
         else:
             i = end + 1
+    elif d[i]=="ę":
+        if numbers:
+            numbers.append(numbers[0])
+        i+=1
+    elif d[i]=="Ę":
+        if numbers:
+            numbers.append(numbers[-1])
+        i+=1
+    elif d[i] == "!":
+        if not numbers:
+            pass
+        elif isinstance(numbers[-1], int):
+            if numbers[-1] < 0:
+                numbers.append(None)
+            else:
+                numbers.append(math.factorial(numbers[-1]))
+        i+=1
+    elif d[i]=="q":
+        sys.exit()
+    elif d[i]=="℅":
+        if type(numbers[-1]) in (int, float) and type(numbers[-2]) in (int, float):
+            if numbers[-2]>numbers[-1]:
+                numbers.append(True)
+            else:
+                numbers.append(False)
+        else:
+            print("℅ Is for comparison of ints!")
+        i+=1
+    elif d[i]=="٪":
+        if type(numbers[-1]) in (int, float) and type(numbers[-2]) in (int, float):
+            if numbers[-2]<numbers[-1]:
+                numbers.append(True)
+            else:
+                numbers.append(False)
+        else:
+            print("٪ Is for comparison of ints!")
+        i+=1
+    elif d[i]=="¢":
+        numbers.append(str(numbers[-1]))
+        i+=1
+    elif d[i]=="$":
+        try:
+            numbers.append(int(numbers.pop()))
+        except ValueError:
+            print("Huh? : non-number on a int-ify command")
+        i+=1
     else:
     	print(f"Huh? : char {i} is not a valid command")
     	i+=1
