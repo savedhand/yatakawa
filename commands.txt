@@ -26,4 +26,10 @@ N - negative the number last in the cm
 ^cimments^ - comments
 © - pop
 ® - squish
+Ę - C[-1]
+ę - C[0]
+٪ - is a smaller than b?
+℅ - is a bigger than b?
+$ - intify
+¢ - strify
 One-character at a time, "Hello, World!",2,5,25,A225,ô,q,w,e,¶
