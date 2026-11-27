@@ -1,6 +1,7 @@
 import numpy
 import math
 import sys
+import random
 d=input("Code: ")
 numbers=[]
 i = 0
@@ -201,6 +202,16 @@ while i < len(d):
         except ValueError:
             print("Huh? : non-number on a int-ify command")
         i+=1
+    elif d[i] == "¥":
+        numbers.append(random.randint(0, 100))
+    elif d[i]=="€":
+        if type(numbers[-1]) == int and type(numbers[-2]) == int:
+            x=numbers[-2]
+            y=numbers[-1]
+            numbers.append("".join(chr(i) for i in range(x, y + 1)))
+        else:
+            print(" Hih? : cannot range up from a non-int or a float")
+        i+=1
     else:
-    	print(f"Huh? : char {i} is not a valid command")
+    	print(f"Huh? : char {i+1} is not a valid command")
     	i+=1
