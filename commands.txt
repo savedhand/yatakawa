@@ -32,4 +32,6 @@ N - negative the number last in the cm
 ℅ - is a bigger than b?
 $ - intify
 ¢ - strify
+¥ - random number 0-100
+€ — Generates a string containing every Unicode character between the two integer code points at CM[-2] and CM[-1] (inclusive), then pushes it onto CM.
 One-character at a time, "Hello, World!",2,5,25,A225,ô,q,w,e,¶
